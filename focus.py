@@ -10,7 +10,6 @@ def return_n_groups(ipstr,n=3):
         try:
             token = ''.join(ipstr[k:k+n])
             if test_words(token.lower()) and len(token) == n:
-                #out.append(token.lower())
                 yield token.lower()
         except:
             pass
