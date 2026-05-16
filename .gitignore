@@ -1,0 +1,32 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+ENV/
+env/
+
+# Audio files
+*.wav
+models/base.pt
+
+# IDEs
+.vscode/
+.idea/
+uv.lock
+
+# 1. Ignore all .md files
+*.md
+
+# 2. Add exceptions for specific files
+!README.md
+!templates/*.md
+
+.DS_Store
+.python-version
