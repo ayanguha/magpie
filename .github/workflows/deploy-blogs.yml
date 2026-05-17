@@ -1,6 +1,7 @@
 name: Deploy Magpie Blogs
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
