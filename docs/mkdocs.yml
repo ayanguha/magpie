@@ -7,10 +7,11 @@ theme:
   name: material
   palette:
     # Enterprise Tech color scheme
-    primary: slate
+    scheme: slate
+    primary: white
     accent: teal
   features:
-    - content.code.copy
+    - content.code.copy 
 
 nav:
   - Home: index.md
@@ -24,4 +25,7 @@ markdown_extensions:
       pygments_style: material
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
