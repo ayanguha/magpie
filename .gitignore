@@ -27,6 +27,7 @@ uv.lock
 # 2. Add exceptions for specific files
 !README.md
 !*/templates/*.md
+!docs/**/*.md
 
 .DS_Store
 .python-version

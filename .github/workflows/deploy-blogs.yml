@@ -5,24 +5,32 @@ on:
   push:
     branches:
       - main
-    # Strict conditional filter: Only trigger if files in these paths change
     paths:
       - "docs/**"
       - "mkdocs.yml"
       - ".github/workflows/deploy-blogs.yml"
 
-# Allow this job to clone the repo and securely write the built HTML to your gh-pages branch
+# Core permissions required for pure GitHub Actions deployments
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment to avoid race conditions
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          # Fetch all history so plugins can read git creation/modification dates if needed
           fetch-depth: 0
 
       - name: Set up Python
@@ -35,12 +43,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs-material
 
-      - name: Configure Git Bot Credentials
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Build and Deploy via MkDocs
+      - name: Build Static HTML Site
+        # Runs inside your blog folder and compiles raw markdown into an 'site' directory
         working-directory: docs
         run: |
-          mkdocs gh-deploy --force
+          mkdocs build
+
+      - name: Upload Static Website Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Tells GitHub to look inside your built HTML folder (relative to root)
+          path: docs/site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
