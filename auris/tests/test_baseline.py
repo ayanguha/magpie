@@ -2,7 +2,7 @@ import pytest
 import os
 import logging
 import sys
-from src.transcripting import main as run_pipeline
+from auris.src.transcripting import main as run_pipeline
 
 # Configure logging for tests
 logging.basicConfig(level=logging.INFO)
@@ -14,12 +14,12 @@ def test_transcription_pipeline():
     works end-to-end with harvard.wav.
     """
     # Setup
-    input_audio = "input/sample-speech-10m.wav"
-    output_file = "output/output.md"
+    input_audio = "auris/input/sample-speech-10m.wav"
+    output_file = "auris/output/output.md"
     
     # Ensure input file exists
     if not os.path.exists(input_audio):
-        pytest.fail(f"Required test file {input_audio} not found. Please ensure it is in the input/ folder.")
+        pytest.fail(f"Required test file {input_audio} not found. Please ensure it is in the auris/input/ folder.")
 
     # Clean up previous output if it exists
     if os.path.exists(output_file):
@@ -62,8 +62,8 @@ def test_performance_pipeline():
     """
     import time
 
-    input_audio = "input/sample-speech-30m.wav"
-    output_file = "output/perf_output.md"
+    input_audio = "auris/input/sample-speech-30m.wav"
+    output_file = "auris/output/perf_output.md"
     time_limit_seconds = 5 * 60
 
     if not os.path.exists(input_audio):

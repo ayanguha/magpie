@@ -19,12 +19,12 @@ logger = logging.getLogger("MeetingProcessor")
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # --- Configuration ---
-AUDIO_FILE_PATH = "input/sample-speech-10m.wav"
-OUTPUT_FILE_PATH = "output/transcript_summary_output.md"
-TEMP_CHUNK_FILENAME = "output/temp_whisper_chunk.wav"
+AUDIO_FILE_PATH = "auris/input/sample-speech-10m.wav"
+OUTPUT_FILE_PATH = "auris/output/transcript_summary_output.md"
+TEMP_CHUNK_FILENAME = "auris/output/temp_whisper_chunk.wav"
 OLLAMA_MODEL = "deepseek-r1:1.5b"
-WHISPER_MODEL_PATH = "models/base.pt"
-PROMPT_TEMPLATES_DIR = "templates"
+WHISPER_MODEL_PATH = "auris/models/base.pt"
+PROMPT_TEMPLATES_DIR = "auris/templates"
 TASK_TYPE = "base"  # Default task type for prompt selection
 
 # 5 minutes per chunk (In milliseconds).

@@ -14,7 +14,7 @@ env/
 
 # Audio files
 *.wav
-models/base.pt
+*/models/base.pt
 
 # IDEs
 .vscode/
@@ -26,7 +26,7 @@ uv.lock
 
 # 2. Add exceptions for specific files
 !README.md
-!templates/*.md
+!*/templates/*.md
 
 .DS_Store
 .python-version
