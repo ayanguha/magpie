@@ -1,1 +1,25 @@
-site_name: My Docs
+site_name: Magpie Blogs
+site_url: https://ayanguha.github.io/magpie/
+
+theme:
+  name: material
+  palette:
+    # Enterprise Tech color scheme
+    primary: slate
+    accent: teal
+  features:
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Beyond the Hype Series:
+      - "Part 1: Private AI Meeting Assistant": beyond_the_hype_magpie.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_style: material
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
