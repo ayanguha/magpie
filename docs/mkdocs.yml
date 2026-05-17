@@ -1,6 +1,8 @@
 site_name: Magpie Blogs
 site_url: https://ayanguha.github.io/magpie/
 
+docs_dir: blogs # Directory where your markdown files are located
+
 theme:
   name: material
   palette:
