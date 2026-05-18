@@ -1,6 +1,8 @@
 
 # Build Your Own Private, Zero-Cost AI Audio Transcriber
 
+![](images/magpie-auris-cover.png)
+
 You finish a 30-minute project sync. Your calendar is already filling up with the next one. All you need is a clean summary of what was decided and who owns what.
 
 So you look at the AI meeting tools. Then you look at the terms of service. Then you look at your legal team's face.
@@ -28,11 +30,33 @@ Our functional requirements are simple, clearly scoped:
 - Raw transcripts will be summarized. There can be multiple task_types which enforce distinct instructions and formats during summarization.
 - Combine raw transcript and summary in a single markdowm output file. 
 
-We also constrained by few non-functional requirements, namely:
+ 
 
-- Memory footprint must be very light - not more than 3G at any given point-in-time 
-- Good observability across elapsed time and CPU/memory utilisation must be captured and logged 
-- Absolutely no cloud interaction (after initial set) during transcription process 
+<div class="grid cards" markdown>
+
+-   __Functional Requirements__
+
+    ---
+
+    Our functional requirements are simple, clearly scoped:
+
+    - The transcriber will take an audio file as input
+    - It will generate raw transcription 
+    - Raw transcripts will be summarized. There can be multiple task_types which enforce distinct instructions and formats during summarization.
+    - Combine raw transcript and summary in a single markdowm output file. 
+
+-    __Non-Functional Requirements__
+
+    ---
+
+    We also constrained by few non-functional requirements, namely:
+
+    - Memory footprint must be very light - not more than 3G at any given point-in-time 
+    - Good observability across elapsed time and CPU/memory utilisation must be captured and logged 
+    - Absolutely no cloud interaction (after initial set) during transcription process
+
+    
+</div>
 
 !!! note
 
@@ -43,6 +67,7 @@ We also constrained by few non-functional requirements, namely:
 
 ### Solution 
 
+![](images/magpie-auris.png)
 
 #### Prefer Deterministic Execution - Always
 
@@ -230,8 +255,7 @@ Start with [`magpie-auris README.md`](https://github.com/ayanguha/magpie/blob/ma
 ## Key take away
 
 Agentic AI is a genuinely powerful paradigm — and still rapidly evolving. But it is not the answer to everything.
-A large class of real-world workloads are better served by traditional software engineering rigour: structured pipelines, deterministic execution, and common sense about resource constraints. The opportunity is not to choose between AI and engineering discipline — it is to apply both deliberately.
-That is what this series is about. Not what AI can do in theory. What it can do when you treat it like an engineering problem.
+A large class of real-world workloads are better served by traditional software engineering rigour: `structured pipelines, deterministic execution, and common sense about resource constraints`. The opportunity is not to choose between AI and engineering discipline — it is to apply both deliberately. 
 
 ---
 

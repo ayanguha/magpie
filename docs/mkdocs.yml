@@ -7,16 +7,16 @@ theme:
   name: material
   palette:
     # Enterprise Tech color scheme
-    scheme: slate
-    primary: white
+    scheme: default
+    primary: black
     accent: teal
   features:
     - content.code.copy 
 
 nav:
   - Home: index.md
-  - Beyond the Hype Series:
-      - "Part 1: Private AI Meeting Assistant": beyond_the_hype_magpie.md
+  - Applied AI Engineering:
+      - "Private AI Audio Transcriber": magpie-auris.md
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -29,3 +29,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - md_in_html
+  - attr_list
+
+  
