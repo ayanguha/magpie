@@ -17,6 +17,8 @@ nav:
   - Home: index.md
   - Applied AI Engineering:
       - "Private AI Audio Transcriber": magpie-auris.md
+  - Databricks Technical Blogs:
+      - "CrewAI On Databricks - Part 1": crewai-on-databricks-part-1.md
 
 markdown_extensions:
   - pymdownx.highlight:
